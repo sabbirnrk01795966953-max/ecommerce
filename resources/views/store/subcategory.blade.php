@@ -1,0 +1,4 @@
+@extends('layouts.store')
+@section('title',$subcategory->name_bn.' - '.($siteSettings['site_name']??'Trendy Deal BD'))
+@section('content')<div class="breadcrumb"><div class="container"><a href="{{ route('home') }}">হোম</a> <span>›</span> <a href="{{ route('shop') }}">শপ</a> <span>›</span> {{ $subcategory->name_bn }}</div></div><section class="container section"><div class="section-row"><div><h1 class="page-title">{{ $subcategory->name_bn }}</h1><p>{{ $products->total() }} টি পণ্য</p></div></div><div class="product-grid">@foreach($products as $product)@include('store.partials.product-card',['product'=>$product])@endforeach</div>{{ $products->links('vendor.pagination.default') }}</section>@endsection
+@push('scripts')<script>document.addEventListener('DOMContentLoaded',()=>window.trackMeta?.('ViewCategory',{content_name:@json($subcategory->name_bn),content_category:@json($subcategory->name_en ?: $subcategory->name_bn)}));</script>@endpush

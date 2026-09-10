@@ -1,0 +1,88 @@
+# =========================
+# Laravel / PHP
+# =========================
+
+/vendor
+/.phpunit.cache
+.phpunit.result.cache
+
+# =========================
+# Environment / Secrets
+# =========================
+
+.env
+.env.*
+!.env.example
+
+auth.json
+
+# =========================
+# Local Database
+# NEVER PUSH SQLITE DATA
+# =========================
+
+/database/*.sqlite
+/database/*.sqlite-*
+/database/*-backup.sqlite
+/database/*-before-*.sqlite
+
+# =========================
+# Storage / User Uploads
+# =========================
+
+/public/storage
+/storage/*.key
+/storage/pail
+
+/storage/logs/*
+!/storage/logs/.gitignore
+
+/storage/framework/cache/*
+!/storage/framework/cache/.gitignore
+
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+
+/storage/app/public/*
+!/storage/app/public/.gitignore
+
+# =========================
+# Frontend
+# =========================
+
+/node_modules
+/public/build
+/public/hot
+
+npm-debug.log
+yarn-error.log
+
+# =========================
+# Local patch / temporary folders
+# =========================
+
+/tdb_patch_*
+/patch*
+/build*
+/inspect*
+
+# =========================
+# IDE / OS
+# =========================
+
+/.fleet
+/.idea
+/.vscode
+
+.DS_Store
+Thumbs.db
+
+# =========================
+# Old Laravel dev files
+# =========================
+
+Homestead.json
+Homestead.yaml
