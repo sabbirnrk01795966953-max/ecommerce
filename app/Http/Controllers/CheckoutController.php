@@ -70,7 +70,7 @@ class CheckoutController extends Controller
 
         $order = DB::transaction(function () use ($validated,$cart,$products,$subtotal,$delivery,$purchaseEventId) {
             // Create with a temporary unique code first so we can use the database order ID.
-            // Final invoice format is always: TW + 6 digits, e.g. TW000123.
+            // Final invoice format is always: TWN + 6 digits, e.g. TWN000123.
             $temporary = 'TMP-'.Str::uuid();
 
             $order = Order::create([
@@ -84,10 +84,10 @@ class CheckoutController extends Controller
             ]);
 
             if ($order->id > 999999) {
-                throw new RuntimeException('TW 6-digit invoice range is exhausted.');
+                throw new RuntimeException('TWN 6-digit invoice range is exhausted.');
             }
 
-            $invoice = 'TW'.str_pad((string) $order->id, 6, '0', STR_PAD_LEFT);
+            $invoice = 'TWN'.str_pad((string) $order->id, 6, '0', STR_PAD_LEFT);
             $order->forceFill([
                 'invoice_id' => $invoice,
                 'external_order_id' => $invoice,

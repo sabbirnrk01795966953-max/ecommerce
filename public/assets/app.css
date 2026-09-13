@@ -37,3 +37,20 @@
   body.quick-checkout-open .mobile-sticky-order{transform:translateY(130%);opacity:0;pointer-events:none}
 }
 @keyframes quickCheckoutUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+
+/* Trendy Deal BD logo size fix */
+.desktop-logo img{
+    height:62px;
+    width:auto;
+    max-width:280px;
+    object-fit:contain;
+}
+
+@media(max-width:720px){
+    .mobile-logo img{
+        height:40px;
+        width:auto;
+        max-width:190px;
+        object-fit:contain;
+    }
+}

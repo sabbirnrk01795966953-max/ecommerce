@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', $siteSettings['site_name'] ?? 'Trendy Deal BD')</title>
     <meta name="description" content="@yield('meta_description', $siteSettings['site_subtitle'] ?? '')">
-    <link rel="stylesheet" href="{{ asset('assets/app.css') }}?v=1.6.1">
+    <link rel="stylesheet" href="{{ asset('assets/app.css') }}?v=1.7.1">
     <style>:root{--brand:{{ $siteSettings['primary_color'] ?? '#00B957' }};--brand-dark:{{ $siteSettings['secondary_color'] ?? '#122B35' }};}</style>
     @stack('head')
     @if(($siteSettings['meta_browser_enabled'] ?? '0') === '1' && !empty($siteSettings['meta_pixel_id']))
